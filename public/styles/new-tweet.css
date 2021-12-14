@@ -1,0 +1,29 @@
+.container-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+textarea{
+  background-color: #FFF;
+  margin: 5px 5px 5px 0;
+  width: 1338px;
+  height: 49px;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid #000000;
+}
+
+button{
+  background-color: blue;
+  font-family: "Bungee";
+  color: white;
+}
+
+.counter{
+  display: flex;
+  justify-content: end;
+  width: fit-content;
+  flex-basis: auto;
+  font-size: smaller;
+}
