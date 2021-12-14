@@ -1,0 +1,22 @@
+nav{
+  display:flex;
+  align-items: center;
+  height: 80px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+  font-family: "Bungee", cursive;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-angle-double-down{
+  display: flex;
+  justify-content: center;
+  color: red;
+}
