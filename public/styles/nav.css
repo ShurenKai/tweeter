@@ -2,12 +2,14 @@ nav{
   display:flex;
   align-items: center;
   height: 120px;
+  width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em;
   font-family: "Bungee", cursive;
   justify-content: space-between;
-  position: relative;
+  top: 0px;
+  position: fixed;
 }
 
 .container{
