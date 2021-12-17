@@ -7,10 +7,19 @@
 $(() => {
   $('#new-tweet-thoughts').submit(function(event){
     event.preventDefault();
+    const contexts = $(this).serialize();
+    const valLength = $(this.text).val().length;
+    const checkNull = $(this.text)
+    if(!checkNull || valLength === 0){
+      alert('why are you like this?')
+    } else if (valLength > 140){
+      alert('too large, try again!')
+    }
+
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method:'POST',
-      data: $(this).serialize(),
+      data: contexts,
       success: (tweets) => {
         renderTweets(tweets)
       },
@@ -26,7 +35,6 @@ $(() => {
       url: 'http://localhost:8080/tweets',
       method: 'GET',
       success: (tweets) => {
-        console.log('hello world')
         renderTweets(tweets)
       },
       error: (err) => {

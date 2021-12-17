@@ -3,13 +3,6 @@ i:hover{
   color: goldenrod;
 }
 
-.new-tweet-thoughts {
-  ('new-tweet-thoughts').submit(function(){
-    event.preventDefault()
-    
-  })
-}
-
 article{
   display: flex;
   flex-direction: column;

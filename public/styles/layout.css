@@ -21,11 +21,6 @@ body {
   font-family: 'Source Sans 3', sans-serif;
 }
 
-#new-tweet-thoughts{
-  ('new-tweet-thoughts').submit(function(event){
-    event.preventDefault()
-  })
-}
 
 a{
   color: white;
