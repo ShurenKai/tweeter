@@ -5,6 +5,13 @@
  */
 
 $(() => {
+
+  const escape = function (str) {
+    let div = document.createElement("span");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   $('#new-tweet-thoughts').submit(function(event){
     event.preventDefault();
     const contexts = $(this).serialize();
@@ -15,17 +22,17 @@ $(() => {
     } else if (valLength > 140){
       alert('too large, try again!')
     }
-
     $.ajax({
-      url: 'http://localhost:8080/tweets',
+      url: '/tweets',
       method:'POST',
       data: contexts,
-      success: (tweets) => {
-        renderTweets(tweets)
-      },
-      error: (err) => {
-        console.log('Error: ', err)
-      }
+    })
+    .done(() => {
+      $('#tweets-container').empty()
+      loadTweets()
+    })
+    .fail((err) => {
+      console.log('Error: ', err)
     })
     $('#tweet-text').val('')
   })
@@ -45,6 +52,7 @@ $(() => {
   loadTweets()
 
   const createTweetElement = function(data){
+    const safeHTML = `<span>${escape(data.content.text)}</span>`;
     const $tweets = $('<article>').addClass('tweets');
     $tweets.append(`<header>
       <div>
@@ -53,7 +61,7 @@ $(() => {
       </div>
       <p>${data.user['handle']}</p>
     </header>
-      <p class="content">${data.content.text}</p>
+      <p class="content">${safeHTML}</p>
     <footer>
       <p class="days-ago">${timeago.format(data['created_at'])}</p>
       <div class="social-media">

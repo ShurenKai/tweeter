@@ -36,3 +36,12 @@ button{
 output{
   font-weight: bold;
 }
+
+#error{
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  max-width: 80%;
+  color: white;
+  margin: 10px 0 0 85px; 
+}
