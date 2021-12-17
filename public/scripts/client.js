@@ -4,37 +4,37 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-    },
-
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-
-  "created_at": 1461116232227
-};
-
 $(() => {
+  $('#new-tweet-thoughts').submit(function(event){
+    event.preventDefault();
     $.ajax({
-      url: '/tweets',
+      url: 'http://localhost:8080/tweets',
       method:'POST',
-      dataType: 'json',
+      data: $(this).serialize(),
       success: (tweets) => {
-        createTweetElement(tweets)
+        renderTweets(tweets)
       },
       error: (err) => {
         console.log('Error: ', err)
       }
     })
+    $('#tweet-text').val('')
+  })
 
-    $('button').submit(function(event){
-      event.preventDefault()
-      let data = $(this).serialize()
+  const loadTweets = () => {
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: 'GET',
+      success: (tweets) => {
+        console.log('hello world')
+        renderTweets(tweets)
+      },
+      error: (err) => {
+        console.log("Error: ", err)
+      }
     })
+  }
+  loadTweets()
 
   const createTweetElement = function(data){
     const $tweets = $('<article>').addClass('tweets');
@@ -58,15 +58,10 @@ $(() => {
   }
 
   const renderTweets = function(tweets) {
-    let tweetest = [tweets]
     const masterTweets = $('#tweets-container')
-    for(let tweet of tweetest){
+    for(let tweet of tweets){
       let $newTweet = createTweetElement(tweet)
-      masterTweets.append($newTweet)
+      masterTweets.prepend($newTweet)
     }
   }
-
-  $(() => {
-    renderTweets(data)
-  })
 })
