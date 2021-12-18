@@ -37,11 +37,11 @@ output{
   font-weight: bold;
 }
 
-#error{
+.error{
   display: flex;
   justify-content: center;
-  background-color: red;
+  border: 5px solid red;
   max-width: 80%;
-  color: white;
+  color: red;
   margin: 10px 0 0 85px; 
 }

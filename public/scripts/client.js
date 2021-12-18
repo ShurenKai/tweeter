@@ -5,7 +5,6 @@
  */
 
 $(() => {
-
   const escape = function (str) {
     let div = document.createElement("span");
     div.appendChild(document.createTextNode(str));
@@ -18,9 +17,9 @@ $(() => {
     const valLength = $(this.text).val().length;
     const checkNull = $(this.text)
     if(!checkNull || valLength === 0){
-      alert('why are you like this?')
+      $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
     } else if (valLength > 140){
-      alert('too large, try again!')
+      $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
     }
     $.ajax({
       url: '/tweets',
@@ -32,7 +31,7 @@ $(() => {
       loadTweets()
     })
     .fail((err) => {
-      console.log('Error: ', err)
+      $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
     })
     $('#tweet-text').val('')
   })
@@ -42,10 +41,12 @@ $(() => {
       url: 'http://localhost:8080/tweets',
       method: 'GET',
       success: (tweets) => {
+        $('.error').removeClass()
+        $('#err').empty()
         renderTweets(tweets)
       },
       error: (err) => {
-        console.log("Error: ", err)
+        $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
       }
     })
   }
