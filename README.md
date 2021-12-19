@@ -83,7 +83,7 @@ That is the end of the Tweeter Tour, you can find the functionality and dependen
 - [x] When a user submits a valid tweet, the list of tweets is refreshed (displaying the new tweet), the Compose Tweet textarea is cleared, and the Character Counter is reset (to 140)
 
 #### Dependencies ####
->"body-parser": "^1.15.2",
->"chance": "^1.0.2",
->"express": "^4.13.4",
->"md5": "^2.1.0",
+- "body-parser": "^1.15.2",
+- "chance": "^1.0.2",
+- "express": "^4.13.4",
+- "md5": "^2.1.0",
