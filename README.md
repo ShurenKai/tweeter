@@ -1,4 +1,4 @@
-# Tweeter Project
+# Tweeter Project made by Cassie/Ren Chen #
 
 Tweeter is a simple, single-page Twitter clone.
 
@@ -6,7 +6,23 @@ I wrote this in order to practice their HTML, CSS, JS, jQuery and AJAX front-end
 
 # Get yourself on Tweeter! #
 
+Take a look inside through the window of the app
+![Windows Ver](https://github.com/ShurenKai/tweeter/blob/experimental/docs/windowTweetPage.png?raw=true)
 
+... or if mobile is your thing, we have a view for that too due to the fantastic efforts of responsive design!
+
+![Mobile ver](https://github.com/ShurenKai/tweeter/blob/experimental/docs/compactMobilePage.png?raw=true)
+
+Oh! You made yourself a new tweet! Oh... you're impersonating me.. that's okay! More Rens in the world is always fun!
+![newTweet](https://github.com/ShurenKai/tweeter/blob/experimental/docs/newTweet.png?raw=true)
+
+If you go to the dev tools and look down at styles, you can force Hover-based items to be shown in its hovered form!
+![Force Hover](https://github.com/ShurenKai/tweeter/blob/experimental/docs/hoverForced.png?raw=true)
+
+This is what our tweet looks like if you could hover over everything on it at once :D
+![Forced Hover View](https://github.com/ShurenKai/tweeter/blob/experimental/docs/hoverAesthetics.png?raw=true)
+
+That is the end of the Tweeter Tour, you can find the functionality and dependencies down below. Happy tweeting :3
 
 # The Bare Necessities (Requirements) #
 [x] A client-side Single Page App (SPA)
