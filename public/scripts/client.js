@@ -13,6 +13,7 @@ $(() => {
 
   $('#new-tweet-thoughts').submit(function(event){
     event.preventDefault();
+    $('#counter').text(140)
     const contexts = $(this).serialize();
     const valLength = $(this.text).val().length;
     const checkNull = $(this.text)

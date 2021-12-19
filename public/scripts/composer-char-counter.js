@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  $('#tweet-text').on('input', () => {
-    let length = $('#tweet-text').val().length
-    let counter = $('#tweet-text').next().find('output')
+  let text = $('#tweet-text').on('input', () => {
+    let length = text.val().length
+    let counter = text.next().children().last()
     counter.text(140 - length)
     if(length > 140){
       counter.css({'color': 'red'})

@@ -11,17 +11,12 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 1.5em;
   font-family: 'Source Sans 3', sans-serif;
 }
-
 
 a{
   color: white;
@@ -38,15 +33,13 @@ a{
  }
 }
 
-/* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 960px) {
   body {
     display: flex;
     align-items: center;
     padding: 100px 0 0 0;
   }
-  body > header{
-    margin-top: 0x;
-    width: 60%;
+  img{
+    margin: 0 0 -33px 0;
   }
 }
