@@ -17,24 +17,23 @@ $(() => {
     const contexts = $(this).serialize();
     const valLength = $(this.text).val().length;
     const checkNull = $(this.text)
-    if(!checkNull || valLength === 0){
+    if(!checkNull || valLength === 0 || valLength > 140){
       $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
-    } else if (valLength > 140){
-      $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
+    } else {
+      $.ajax({
+        url: '/tweets',
+        method:'POST',
+        data: contexts,
+      })
+      .done(() => {
+        $('#tweets-container').empty()
+        loadTweets()
+      })
+      .fail((err) => {
+        $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
+      })
+      $('#tweet-text').val('')
     }
-    $.ajax({
-      url: '/tweets',
-      method:'POST',
-      data: contexts,
-    })
-    .done(() => {
-      $('#tweets-container').empty()
-      loadTweets()
-    })
-    .fail((err) => {
-      $("#err").html("Please input a message between 1 and 140 characters!").addClass("error")
-    })
-    $('#tweet-text').val('')
   })
 
   const loadTweets = () => {

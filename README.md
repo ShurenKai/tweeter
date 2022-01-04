@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-I wrote this in order to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills. 
+I wrote this in order to practice HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills. 
 
 # Get yourself on Tweeter! #
 
