@@ -24,6 +24,8 @@ a{
   font-family: 'Source Sans 3', sans-serif;
 }
 
+/* will only execute should the screen size fit the media conditions */
+
 @media (max-width: 600px){
  .container{
    width: 90%;

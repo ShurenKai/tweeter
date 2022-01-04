@@ -1,3 +1,6 @@
+
+/* styling for form */
+
 .container-bottom{
   display: flex;
   align-items: center;
@@ -37,14 +40,29 @@ output{
   font-weight: bold;
 }
 
+/* error message properties */
+
+@keyframes mistake{
+  0%   {background-color: transparent;}
+  25%  {background-color: lightblue;}
+  50%  {background-color: white;}
+  75%  {background-color: green;}
+  100% {background-color: orange;}
+}
+
 .error{
   display: flex;
   justify-content: center;
   border: 5px solid red;
   max-width: 80%;
   color: red;
-  margin: 10px 0 0 85px; 
+  margin: 10px 0 0 85px;
+  animation-name: mistake;
+  animation-duration: 5s;
 }
+
+
+/* icon styles */
 
 i:hover{
   background-color: inherit;
@@ -72,6 +90,8 @@ article > header > div{
   box-shadow: 6px 6px lightgrey;
 
 }
+
+/* image placement*/
 
 .tweets img{
   display: flex;

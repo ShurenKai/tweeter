@@ -9,6 +9,8 @@ body > header{
   margin-top: 120px;
 }
 
+/* style changes that will only execute if media conditions are met */
+
 @media only screen and (min-width: 960px) {
   body > header{
     margin-top: 0x;
